@@ -1,4 +1,4 @@
-name = ' egor \n\tandr \n  '
+# name = ' egor \n\tandr \n  '
 # print(f'Hello, {name}, do you want learning Python today?')
 
 # print(name.upper())
@@ -18,5 +18,16 @@ name = ' egor \n\tandr \n  '
 # print(name.rstrip())
 # print(name.strip())
 
-file_name = 'python_notes.txt'
-print(file_name.removesuffix('.txt'))
+# file_name = 'python_notes.txt'
+# print(file_name.removesuffix('.txt'))
+
+#Egor 20.02.2025 Вывод числа 8 с разных операций
+print(5+3)
+print(10-2)
+print(2*4)
+print(16/2)
+
+#Вывод любимых чисел
+num, num2 = 7, 9
+print(num)
+print(num2)
