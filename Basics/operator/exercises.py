@@ -67,20 +67,32 @@
 # else:
 #     print('list is empty')
 
-current_users = ['Egor', 'Andrey', 'Vlad', 'Sergey', 'Aleksey', 'Kirill']
+# current_users = ['Egor', 'Andrey', 'Vlad', 'Sergey', 'Aleksey', 'Kirill']
 
-another_users = [name.lower() for name in current_users]
+# another_users = [name.lower() for name in current_users]
 
-print(another_users)
+# print(another_users)
 
-new_users = ['Aleksandr', 'andrey', 'Maksim', 
-             'Nikita', 'Aleksey', 'kirill', 
-             'Leonid']
+# new_users = ['Aleksandr', 'andrey', 'Maksim', 
+#              'Nikita', 'Aleksey', 'kirill', 
+#              'Leonid']
 
-for name in new_users:
-    if name in current_users:
-        print(f'Sorry {name} is busy')
-    elif name in another_users:
-        print(f'Sorry {name} is busy2')
+# for name in new_users:
+#     if name in current_users:
+#         print(f'Sorry {name} is busy')
+#     elif name in another_users:
+#         print(f'Sorry {name} is busy2')
+#     else:
+#         print(f"this name {name} is free")
+
+inted = [i for i in range(1, 10)]
+
+for i in inted:
+    if i == 1:
+        print(f'\n{i}st')
+    elif i == 2:
+        print(f'\n{i}nd')
+    elif i == 3:
+        print(f'\n{i}rd')
     else:
-        print(f"this name {name} is free")
+        print(f'\n{i}th')
