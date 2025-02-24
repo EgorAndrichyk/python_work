@@ -30,12 +30,12 @@
 # c = city_country('st.petersburg')
 # print(c)
 
-def make_album(name, title, roads=''):
-    if not roads:
-        album = {'name': name.title(), 'title': title.title()}
-    else:
-        album = {'name': name.title(), 'title': title.title(), 'roads': roads}
-    return album
+# def make_album(name, title, roads=''):
+#     if not roads:
+#         album = {'name': name.title(), 'title': title.title()}
+#     else:
+#         album = {'name': name.title(), 'title': title.title(), 'roads': roads}
+#     return album
 
 # alums = make_album('octin', 'nirvana', 5)
 # print(alums)
@@ -43,14 +43,34 @@ def make_album(name, title, roads=''):
 # alums = make_album('octin', 'nirvana')
 # print(alums)
 
-while True:
-    print('if exit enter q')
-    names = input('Name album ')
-    if names == 'q':
-        break
-    titles = input('Title albums ')
-    if titles == 'q':
-        break
+# while True:
+#     print('if exit enter q')
+#     names = input('Name album ')
+#     if names == 'q':
+#         break
+#     titles = input('Title albums ')
+#     if titles == 'q':
+#         break
+#     m = make_album(names, titles, 6)
+#     print(m)
 
-m = make_album(names, titles, 5)
-print(m)
+
+
+# def show_message(messages):
+#     for i in messages:
+#         print(i)
+
+def send_message(messages):
+    while messages:
+        current = messages.pop()
+        print(current)
+        sent_message.append(current)
+    return sent_message
+
+lists = ['hi, friends', 'hello, human', 'aloha']
+sent_message = []
+
+# show_message(lists[:])
+send_message(lists[:])
+print(lists)
+print(sent_message)
