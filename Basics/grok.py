@@ -47,12 +47,44 @@
 #     print(shop)
 
 
+# import random
+
+# length = int(input('your length '))
+
+# alf_big = [chr(i).upper() for i in range(97, 123)]
+# alf_smoll = [chr(i) for i in range(97, 123)]
+# digits = [str(i) for i in range(10)]
+
+# all_chars = alf_big + alf_smoll + digits
+# print(all_chars)
+# password = []
+
+# for _ in range(length):
+#     password.append(random.choice(all_chars))
+
+# print(password)
+# # Преобразуем список в строку и выводим
+# password_str = ''.join(password)
+# print('Ваш пароль:', password_str)
+
 import random
 
-length = int(input('your length '))
+a = random.randint(1, 100)
+count = 0
 
-alf = [chr(i) for i in range(97, 123)]
+print('Я загадал число от 1 до 100. Угадай!')
 
-password = [] 
-f = random.randint(6, 15)
-print(f)
+while True:
+    try:
+        b = int(input('Твоя попытка: '))
+        count += 1
+        if b == a:
+            print('Угадал!')
+            print(f'Число попыток: {count}')
+            break
+        elif b < a:
+            print('Моё число больше.')
+        else:
+            print('Моё число меньше.')
+    except ValueError:
+        print('Ошибка: введи число!')
