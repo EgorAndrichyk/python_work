@@ -67,24 +67,70 @@
 # password_str = ''.join(password)
 # print('Ваш пароль:', password_str)
 
-import random
+# import random
 
-a = random.randint(1, 100)
-count = 0
+# a = random.randint(1, 100)
+# count = 0
 
-print('Я загадал число от 1 до 100. Угадай!')
+# print('Я загадал число от 1 до 100. Угадай!')
 
-while True:
-    try:
-        b = int(input('Твоя попытка: '))
-        count += 1
-        if b == a:
-            print('Угадал!')
-            print(f'Число попыток: {count}')
-            break
-        elif b < a:
-            print('Моё число больше.')
-        else:
-            print('Моё число меньше.')
-    except ValueError:
-        print('Ошибка: введи число!')
+# while True:
+#     try:
+#         b = int(input('Твоя попытка: '))
+#         count += 1
+#         if b == a:
+#             print('Угадал!')
+#             print(f'Число попыток: {count}')
+#             break
+#         elif b < a:
+#             print('Моё число больше.')
+#         else:
+#             print('Моё число меньше.')
+#     except ValueError:
+#         print('Ошибка: введи число!')
+
+# def is_prime(n):
+#     if n <= 1:  
+#         return False  
+#     for i in range(2, int(n**0.5) + 1):  
+#         if n % i == 0:  
+#             return False   
+#     return True  
+
+# num = int(input('Your number: '))
+# if is_prime(num):
+#     print(f'Number {num} is prime')
+# else:
+#     print(f'Number {num} is not prime')
+
+# def sort_words(text):
+#     sorts = []
+#     word = ''
+#     for i in text:
+#         if i == ' ':
+#             if word:
+#                 sorts.append(word)
+#             word = ''
+#         else:
+#             word += i
+# # Сортировка: сначала по длине, потом по алфавиту
+#     sorted_words = sorted(sorts, key=lambda x: (len(x), x))
+#     return sorted_words
+
+# def sort_words(text):
+#     words = text.split()  # Разбивает строку по пробелам
+#     return sorted(words, key=lambda x: (len(x), x))
+
+# text = input('Введи текст: ')
+# result = sort_words(text)
+# print('Результат:', result)
+
+def words(text):
+    word = text.split('-')
+    print(word)
+words('1-2-3-4')
+
+# numbers = [10, 15, 7, 3, 12]
+lists = ['кот', 'пёс', 'слон', 'мышь']
+sorted_numbers = sorted(lists, key=lambda x: x[-1])
+print(sorted_numbers)
