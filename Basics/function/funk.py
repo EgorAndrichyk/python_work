@@ -60,17 +60,41 @@
 #     for i in messages:
 #         print(i)
 
-def send_message(messages):
-    while messages:
-        current = messages.pop()
-        print(current)
-        sent_message.append(current)
-    return sent_message
+# def send_message(messages):
+#     while messages:
+#         current = messages.pop()
+#         print(current)
+#         sent_message.append(current)
+#     return sent_message
 
-lists = ['hi, friends', 'hello, human', 'aloha']
-sent_message = []
+# lists = ['hi, friends', 'hello, human', 'aloha']
+# sent_message = []
 
-# show_message(lists[:])
-send_message(lists[:])
-print(lists)
-print(sent_message)
+# # show_message(lists[:])
+# send_message(lists[:])
+# print(lists)
+# print(sent_message)
+
+# def sandwich(*args):
+#     for i in args:
+#         print(i)
+
+# sandwich('fff', 'www', 'ggg')
+
+# def build_profile(first, last, **user_info):
+#     user_info['first_name'] = first
+#     user_info['last_name'] = last
+
+#     return user_info
+
+# user_profile = build_profile('egor', 'andryichuk', god='he', fgt='ght')
+# print(user_profile)
+
+def car(made, name, **cars):
+    cars['Производитель'] = made
+    cars['Название'] = name
+
+    return cars
+
+cart = car('hundai', 'solaris', color='blue', tow_pacadge=True)
+print(cart)
