@@ -1,4 +1,4 @@
-
+import random
 
 # a = int(input('Your number is: '))
 # b = int(input('Your number is: '))
@@ -125,12 +125,83 @@
 # result = sort_words(text)
 # print('Результат:', result)
 
-def words(text):
-    word = text.split('-')
-    print(word)
-words('1-2-3-4')
+# def words(text):
+#     word = text.split('-')
+#     print(word)
+# words('1-2-3-4')
 
-# numbers = [10, 15, 7, 3, 12]
-lists = ['кот', 'пёс', 'слон', 'мышь']
-sorted_numbers = sorted(lists, key=lambda x: x[-1])
-print(sorted_numbers)
+# # numbers = [10, 15, 7, 3, 12]
+# lists = ['кот', 'пёс', 'слон', 'мышь']
+# sorted_numbers = sorted(lists, key=lambda x: x[-1])
+# print(sorted_numbers)
+
+# a = 0
+# b = random.randint(1, 100)
+# attempts =  0
+
+
+# while a != b:
+#     a = input('Your number is ')
+#     attempts += 1
+#     if a < b:
+#         print('So smoll')
+#         attempts+=1
+#     elif a > b:
+#         print('So big')
+#         attempts+=1
+#     else:
+#         print(f'You win in the {attempts} times')
+
+
+def main():
+    number = random.randint(1, 100)
+    guesses = 0
+    while True:
+        guess = int(input("Угадай число (1-100): "))
+        guesses += 1
+        if guess == number:
+            print(f"Поздравляю! Ты угадал за {guesses} попыток.")
+            break
+        elif guess < number:
+            print("Слишком низко. Попробуй ещё.")
+        else:
+            print("Слишком высоко. Попробуй ещё.")
+
+if __name__ == "__main__":
+    main()
+
+# shops = ['milk', 'bread', 'apple', 'tomato']
+
+# while True:
+#     try:
+#         print(f'Менеджер списка покупок:\n1. Добавить товар\n2. Удалить товар\n3. Просмотреть список\n4. Выйти\n')
+#         a = int(input('Выберите действие (1-4): '))
+#         if a == 1:
+#             b = input('Что хотите добавить? ')
+#             shops.append(b)
+#             print(f'{b} добавлен в список.')
+#         elif a == 2:
+#             b = input('Что хотите удалить? ')
+#             if b in shops:
+#                 shops.remove(b)
+#                 print(f'{b} удалён из списка.')
+#             else:
+#                 print(f'{b} нет в списке.')
+#         elif a == 3:
+#             if shops:
+#                 print('Список покупок:', shops)
+#             else:
+#                 print('Список пуст.')
+#         elif a == 4:
+#             print('До свидания!')
+#             break
+#         else:
+#             print('Нет такого номера в менеджере.')
+#     except ValueError:
+#         print('Введите пожалуйста число.')
+
+
+def proc(procent):
+    if procent <= 85:
+        return 'A'
+    elif procent <= 85:
