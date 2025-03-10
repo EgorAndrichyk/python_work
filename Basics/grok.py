@@ -237,6 +237,101 @@ import random
 # 3. Выйти
 # Выбери действие (1-3): 1
 # Отсортированный список: [1, 2, 5, 8, 9]
+
+# Подсказки
+# Задание 1: Используй random.choice() или random.sample() для выбора вопросов. Словарь удобно хранит пары "вопрос-ответ".
+# Задание 2: Разбери строку ввода с помощью split() и преобразуй в числа. Для сортировки используй sorted() с параметром reverse.
+# Задание 3: В классе храни атрибуты через self, а для управления задачами можешь использовать список объектов класса.
+
+
+# def vibor(quest, qu):
+#     quests = []
+#     for i in quest:
+#         quests.append(i)
+#     rand = random.sample(quests, qu)
+#     return rand
+#     # return random.sample(list(quest.keys()), qu)
+
+# def variant(rand, quest):
+#     attempts = 0
+#     for i in rand:
+#         try:
+#             b = int(input(f'Вопрос: {i} и твой ответ : '))
+#             for k, v in quest.items():
+#                 if i == k:
+#                     if b == v:
+#                         print('Правильный ответ')
+#                         attempts+=1
+#                     else:
+#                         print('Это не правильный ответ')
+            
+#             # if b == quest[i]:
+#             #     print('Правильный ответ')
+#             #     attempts += 1
+#             # else:
+#             #     print('Это не правильный ответ')
+#         except ValueError:
+#             print(print('Введи число!'))
+#     return attempts
+
+# def win(attempts, qu):
+#     proc = attempts / qu * 100
+#     return proc
+
+# def main():
+#     quest = {
+#         '2 + 2': 4,
+#         '12 * 4': 48,
+#         '10 / 5': 2,
+#         '125 / 5': 25,
+#         '3 * 17': 51,
+#         '6 * 7': 42,
+#         '5 * 13': 65,
+#         '20 * 7': 140,
+#     }
+#     qu = 5
+#     rand = vibor(quest, qu)
+#     attempts = variant(rand, quest)
+#     c = win(attempts, qu)
+#     print(f'You win {attempts} quests and you proc {c}')
+
+# if __name__ == "__main__":
+#     main()
+
+# def numb():
+#     try:
+#         num_list = [int(i) for i in list(input('список чисел: ').split())]
+#     except ValueError:
+#         print('Введите цифры')
+#     return num_list
+
+# def sort_des(lists):
+#     sort_list = sorted(lists)
+#     return sort_list
+
+# def sort_ascen(lists):
+#     sort_list = sorted(lists, reverse=True)
+#     return sort_list
+
+# def main():
+#     lists = numb()
+#     print(f'Сортировщик списка:\n1. Сортировать по возрастанию\n2 Сортировать по убыванию\n3. Выйти\n')
+#     while True:
+#         menu = int(input('Выбери что будем делать?\n'))
+#         if menu == 1:
+#             print('Сортируем список по возрастанию')
+#             print(sort_des(lists))
+#         elif menu == 2:
+#             print('Сортируем список по убыванию')
+#             print(sort_ascen(lists))
+#         elif menu == 3:
+#             print('Выходим')
+#             break
+
+# if __name__ == "__main__":
+#     main()
+
+
 # Задание 3: Таймер задач
 # Создай класс TaskTimer, который помогает отслеживать время, потраченное на задачи. Программа должна:
 
@@ -259,34 +354,50 @@ import random
 # Выбери действие (1-3): 2
 # Учёба: 15 минут
 # Работа: 0 минут
-# Подсказки
-# Задание 1: Используй random.choice() или random.sample() для выбора вопросов. Словарь удобно хранит пары "вопрос-ответ".
-# Задание 2: Разбери строку ввода с помощью split() и преобразуй в числа. Для сортировки используй sorted() с параметром reverse.
-# Задание 3: В классе храни атрибуты через self, а для управления задачами можешь использовать список объектов класса.
 
 
-def vibor(quest):
-    quests = []
-    for i in quest:
-        quests.append(i)
-    rand = random.sample(quests, 5)
-    return rand
+class TaskTimer:
+    def __init__(self, task, time_on_task=0):
+        self.task = task
+        self.time_on_task = time_on_task
 
+    def add_time(self, time):
+        if time > 0:
+            self.time_on_task += time
+            print(f"Добавлено {time} минут к задаче '{self.task}'")
+        else:
+            print("Время должно быть положительным")
 
+    def show_status(self):
+        print(f"{self.task}: {self.time_on_task} минут")
 
 def main():
-    quest = {
-        '2 + 2': 4,
-        '12 * 4': 48,
-        '10 / 5': 2,
-        '125 / 5': 25,
-        '3 * 17': 51,
-        '6 * 7': 42,
-        '5 * 13': 65,
-        '20 * 7': 140,
-    }
-    a = random.choice(quest)
-    print(a)
+    tasks = [
+        TaskTimer('Работа', 30),
+        TaskTimer('Учеба', 50)
+    ]
+    while True:
+        try:
+            print('Меню таймера задач:\n1. Добавить время к задаче\n2. Показать состояние задач\n3. Выйти')
+            choice = int(input('Выбери действие (1-3): '))
+            if choice == 1:
+                task_num = int(input(f'Выбери задачу (1 - {tasks[0].task}, 2 - {tasks[1].task}): '))
+                if task_num in [1, 2]:
+                    time = int(input('Сколько времени добавить? '))
+                    tasks[task_num - 1].add_time(time)
+                else:
+                    print('Выбери 1 или 2')
+            elif choice == 2:
+                print('Состояние задач:')
+                for task in tasks:
+                    task.show_status()
+            elif choice == 3:
+                print('Выходим из программы')
+                break
+            else:
+                print('Выбери от 1 до 3')
+        except ValueError:
+            print('Нужно ввести число')
 
 if __name__ == "__main__":
     main()
